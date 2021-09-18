@@ -39,10 +39,7 @@ class PostController extends Controller
     {
         $posts = Post::where('is_published', 1)->get();
 
-        foreach ($posts as $post) {
-            dump($post->title);
-        }
-        return "this is my posts";
+        return view('posts',compact('posts'));
     }
 
     public function update(){
